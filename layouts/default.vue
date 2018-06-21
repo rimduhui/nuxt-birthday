@@ -68,17 +68,6 @@ export default {
   margin: 0;
 }
 
-.edittextSmall {
-  width: 100%;
-  height: 30px;
-  padding: 12px;
-  margin: 0px 0px 10px 0px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-  resize: vertical;
-}
-
 @media screen and (min-width: 601px) {
   div.title {
     font-size: 70px;

@@ -99,6 +99,17 @@ export default {
   padding: 0;
 }
 
+.edittextSmall {
+  width: 100%;
+  padding: 12px;
+  margin: 0px 0px 10px 0px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  resize: vertical;
+  font-size: 1.2em;
+}
+
 .edittextLarge {
   width: 100%;
   height: 500px;
@@ -108,6 +119,7 @@ export default {
   border-radius: 4px;
   box-sizing: border-box;
   resize: vertical;
+  font-size: 1.2em;
 }
 
 .checkMessage{

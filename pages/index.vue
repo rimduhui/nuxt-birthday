@@ -3,9 +3,11 @@
     <div class='title'>
       위대하신 <b>슬아여왕</b>님 생일
     </div>
-    <nuxt-link class="fun-btn" to="/post">
-      축하메시지 쓰기
-    </nuxt-link>
+    <div class="fun-btn">
+      <nuxt-link to="/post">
+        축하메시지 쓰기
+      </nuxt-link>
+    </div>
     <template v-if="messages">
       <div class='subtitle'>
       전체 공개 메세지
@@ -68,7 +70,7 @@ export default {
   },
   head () {
     return {
-      title: 'Users'
+      title: '슬아 생축'
     }
   },
   data () {
@@ -84,12 +86,12 @@ export default {
 <style scoped>
 .title
 {
-  margin: 50px 0;
+  margin: 20px 0;
 }
 
 .subtitle
 {
-  margin: 40px 20px 20px 20px;
+  margin: 20px;
 }
 
 .background
@@ -130,20 +132,6 @@ export default {
 /* add default color for animation start  */
 
 
-/* toggle this class */
-
-.color-bg-start {
-  background-color: salmon;
-}
-
-
-/* toggle class bg-animate-color */
-
-.bg-animate-color {
-  animation: random-bg .5s linear infinite;
-}
-
-
 /* add animation to bg color  */
 
 @keyframes random-bg {
@@ -157,9 +145,11 @@ export default {
 
 .fun-btn {
   /* change bg color to get different hues    */
+  max-width: 200px;
   background-color: salmon;
   color: white;
   padding: 20px 30px;
+  margin: auto;
   border: none;
   transition: all .3s ease;
   border-radius: 5px;
@@ -170,12 +160,6 @@ export default {
   cursor: pointer;
   font-weight: bold;
   animation: random-bg .5s linear infinite, grow 1300ms ease infinite;
-}
-
-.start-fun {
-  background-color: #fff !important;
-  /* change color of button text when fun is started   */
-  color: salmon !important;
 }
 
 /* pulsating effect on button */
