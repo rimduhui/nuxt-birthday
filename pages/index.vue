@@ -1,21 +1,39 @@
 <template>
   <section class="container">
-    <img src="~assets/img/logo.png" alt="Nuxt.js Logo" class="logo" />
-    <h1 class="title">
-      USERS
-    </h1>
-    <template v-if="messages">
-      <ul class="users">
-        <li v-for="message in messages" :key="message.id">
-          <nuxt-link :to="{ name: 'message', params: { message:message.id }}">
-            {{ message.name }}님의 메시지입니다.
-          </nuxt-link>
-        </li>
-      </ul>
-    </template>
     <nuxt-link class="button" to="/post">
       글쓰기로
     </nuxt-link>
+    <template v-if="messages">
+      <div>
+      전체 공개 메세지
+        <div>
+          <ul class="users">
+            <li v-for="message in messages" :key="message.id">
+              <div v-if="message.private != true">
+                <nuxt-link :to="{ name: 'message', params: { message:message.id }}">
+                  {{ message.name }}님의 메시지입니다.
+                </nuxt-link>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div>
+      비밀 메세지
+        <div>
+          <input type="password" v-model="passwordInput" v-if="password != passwordInput" placeholder="비밀번호 입력">
+          <ul class="users" v-if="password == passwordInput">
+            <li v-for="message in messages" :key="message.id">
+              <div v-if="message.private == true">
+                <nuxt-link :to="{ name: 'message', params: { message:message.id }}">
+                  {{ message.name }}님의 메시지입니다.
+                </nuxt-link>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </template>
   </section>
 </template>
 
@@ -51,7 +69,9 @@ export default {
   },
   data () {
     return {
-      messages: null
+      messages: null,
+      password: '0000',
+      passwordInput: ''
     }
   }
 }

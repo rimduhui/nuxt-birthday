@@ -1,11 +1,23 @@
 <template>
-  <div>
-    <input v-model="name" placeholder="이름을 입력">
-    <textarea v-model="content" placeholder="여러줄을 입력해보세요"></textarea>
-    <input v-model="password" type="password">
-    <input v-model="checked" type="checkbox" id="checkbox">
-    <button v-on:click="testMethod">등록하기</button>
-  </div>
+  <section class="container">
+    <div>
+      <div>
+        <input v-model="name" placeholder="이름을 입력">
+      </div>
+      <div>
+        <textarea v-model="content" placeholder="여러줄을 입력해보세요"></textarea>
+      </div>
+      <div>
+        <input v-model="checked" type="checkbox" id="checkbox">
+      </div>
+      <div>
+        <button v-on:click="testMethod">등록하기</button>
+      </div>
+      <nuxt-link class="button" to="/">
+        리스트로
+      </nuxt-link>
+    </div>
+  </section>
 </template>
 
 <script>
@@ -57,12 +69,12 @@ export default {
             id: this.count,
             name: this.name,
             content: this.content,
-            private: this.checked,
-            password: this.password
+            private: this.checked
           })
           this.database.ref('count/').set({
             count: this.count
           })
+          this.$router.replace({ path: '/' })
         })
     }
   }
