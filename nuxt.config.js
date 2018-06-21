@@ -10,7 +10,7 @@ module.exports = {
       { hid: 'description', name: 'description', content: '슬아 생일선물 대작전' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: 'favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
   /*
