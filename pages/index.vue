@@ -6,32 +6,32 @@
     <template v-if="messages">
       <div>
       전체 공개 메세지
-        <div>
-          <ul class="users">
-            <li v-for="message in messages" :key="message.id">
-              <div v-if="message.private != true">
-                <nuxt-link :to="{ name: 'message', params: { message:message.id }}">
-                  {{ message.name }}님의 메시지입니다.
-                </nuxt-link>
-              </div>
-            </li>
-          </ul>
-        </div>
+      </div>
+      <div>
+        <ul class="users">
+          <li v-for="message in messages" :key="message.id">
+            <div v-if="message.private != true">
+              <nuxt-link :to="{ name: 'message', params: { message:message.id }}">
+                {{ message.name }}님의 메시지입니다.
+              </nuxt-link>
+            </div>
+          </li>
+        </ul>
       </div>
       <div>
       비밀 메세지
-        <div>
-          <input type="password" v-model="passwordInput" v-if="password != passwordInput" placeholder="비밀번호 입력">
-          <ul class="users" v-if="password == passwordInput">
-            <li v-for="message in messages" :key="message.id">
-              <div v-if="message.private == true">
-                <nuxt-link :to="{ name: 'message', params: { message:message.id }}">
-                  {{ message.name }}님의 메시지입니다.
-                </nuxt-link>
-              </div>
-            </li>
-          </ul>
-        </div>
+      </div>
+      <div>
+        <input type="password" v-model="passwordInput" v-if="password != passwordInput" placeholder="비밀번호 입력">
+        <ul class="users" v-if="password == passwordInput">
+          <li v-for="message in messages" :key="message.id">
+            <div v-if="message.private == true">
+              <nuxt-link :to="{ name: 'message', params: { message:message.id }}">
+                {{ message.name }}님의 메시지입니다.
+              </nuxt-link>
+            </div>
+          </li>
+        </ul>
       </div>
     </template>
   </section>
