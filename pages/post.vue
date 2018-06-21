@@ -49,6 +49,7 @@ export default {
     return {
       title: '슬아 생축',
       meta: [
+        { property: 'og:url', content: 'http://bit.ly/2thTMRB' },
         { property: 'og:title', cotent: '슬아 생일선물 대작전' },
         { property: 'og:description', cotent: '슬아에게 그동한 못한 말들을 생일 선물로 주세요!' },
         { property: 'og:image', cotent: '~/assets/img/seula_duhui.png' }
