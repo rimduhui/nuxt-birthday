@@ -1,5 +1,5 @@
 <template>
   <footer>
-    Visit our website for more documentation : <a href="https://nuxtjs.org" target="_blank">nuxtjs.org</a>
+    슬아의 생일 6월 29일 : <a href="https://www.instagram.com/seuls2s2s2/?hl=ko" target="_blank">instagram</a>
   </footer>
 </template>

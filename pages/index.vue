@@ -1,38 +1,42 @@
 <template>
   <section class="container">
-    <nuxt-link class="button" to="/post">
-      글쓰기로
+    <div class='title'>
+      위대하신 <b>슬아여왕</b>님 생일
+    </div>
+    <nuxt-link class="fun-btn" to="/post">
+      축하메시지 쓰기
     </nuxt-link>
     <template v-if="messages">
-      <div>
+      <div class='subtitle'>
       전체 공개 메세지
       </div>
-      <div>
-        <ul class="users">
+      <div class="messages">
+        <ul class="messagesList">
           <li v-for="message in messages" :key="message.id">
-            <div v-if="message.private != true">
+            <div class="messageList" v-if="message.private != true">
               <nuxt-link :to="{ name: 'message', params: { message:message.id }}">
-                {{ message.name }}님의 메시지입니다.
+                {{ message.name }}님의 메시지
               </nuxt-link>
             </div>
           </li>
         </ul>
       </div>
-      <div>
+      <div class='subtitle'>
       비밀 메세지
       </div>
-      <div>
-        <input type="password" v-model="passwordInput" v-if="password != passwordInput" placeholder="비밀번호 입력">
-        <ul class="users" v-if="password == passwordInput">
+      <div class="messages">
+        <input class="edittext" type="password" v-model="passwordInput" v-if="password != passwordInput" placeholder="비밀번호 입력">
+        <ul class="messagesList" v-if="password == passwordInput">
           <li v-for="message in messages" :key="message.id">
             <div v-if="message.private == true">
               <nuxt-link :to="{ name: 'message', params: { message:message.id }}">
-                {{ message.name }}님의 메시지입니다.
+                {{ message.name }}님의 메시지
               </nuxt-link>
             </div>
           </li>
         </ul>
       </div>
+      <br>
     </template>
   </section>
 </template>
@@ -80,16 +84,116 @@ export default {
 <style scoped>
 .title
 {
-  margin: 30px 0;
+  margin: 50px 0;
 }
-.users
+
+.subtitle
 {
+  margin: 40px 20px 20px 20px;
+}
+
+.background
+{
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.5;
+}
+.messagesList
+{
+  max-width: 600px;
   list-style: none;
-  margin: 0;
+  margin: auto;
   padding: 0;
+}
+.messageList
+{
+  margin: 5px;
+}
+@media screen and (min-width: 601px) {
+  div.messages {
+    font-size: 50px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  div.messages {
+    font-size: 20px;
+  }
 }
 .user
 {
   margin: 10px 0;
+}
+
+
+
+/* add default color for animation start  */
+
+
+/* toggle this class */
+
+.color-bg-start {
+  background-color: salmon;
+}
+
+
+/* toggle class bg-animate-color */
+
+.bg-animate-color {
+  animation: random-bg .5s linear infinite;
+}
+
+
+/* add animation to bg color  */
+
+@keyframes random-bg {
+  from {
+    filter: hue-rotate(0);
+  }
+  to {
+    filter: hue-rotate(360deg);
+  }
+}
+
+.fun-btn {
+  /* change bg color to get different hues    */
+  background-color: salmon;
+  color: white;
+  padding: 20px 30px;
+  border: none;
+  transition: all .3s ease;
+  border-radius: 5px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  outline: none;
+  align-self: center;
+  cursor: pointer;
+  font-weight: bold;
+  animation: random-bg .5s linear infinite, grow 1300ms ease infinite;
+}
+
+.start-fun {
+  background-color: #fff !important;
+  /* change color of button text when fun is started   */
+  color: salmon !important;
+}
+
+/* pulsating effect on button */
+@keyframes grow {
+  0% {
+    transform: scale(1);
+  }
+  14% {
+    transform: scale(1.3);
+  }
+  28% {
+    transform: scale(1);
+  }
+  42% {
+    transform: scale(1.3);
+  }
+  70% {
+    transform: scale(1);
+  }
 }
 </style>

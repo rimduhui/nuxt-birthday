@@ -1,22 +1,27 @@
 <template>
   <section class="container">
-    <div>
-      <div>
-        <input v-model="name" placeholder="이름을 입력">
+    <div class="inputForm">
+      <div class="title">
+        슬아야 생일 축하해
       </div>
       <div>
-        <textarea v-model="content" placeholder="여러줄을 입력해보세요"></textarea>
+        <input class="edittextSmall" v-model="name" placeholder="이름을 입력하세요">
       </div>
       <div>
+        <textarea class="edittextLarge" v-model="content" placeholder="슬아에게 생일 축하 메시지를 입력하세요."></textarea>
+      </div>
+      <div class="checkMessage">
+        슬아에게만 보여주고 싶다면 체크하세요.
         <input v-model="checked" type="checkbox" id="checkbox">
       </div>
-      <div>
-        <button v-on:click="testMethod">등록하기</button>
+      <div class="button" v-on:click="testMethod">
+        메시지 등록
       </div>
       <nuxt-link class="button" to="/">
-        리스트로
+        취소하기
       </nuxt-link>
     </div>
+    <br>
   </section>
 </template>
 
@@ -82,5 +87,31 @@ export default {
 </script>
 
 <style scoped>
+.title
+{
+  margin: 30px 0;
+}
+.inputForm {
+  width: 90%;
+  max-width: 600px;
+  list-style: none;
+  margin: auto;
+  padding: 0;
+}
+
+.edittextLarge {
+  width: 100%;
+  height: 500px;
+  padding: 12px;
+  margin: 0px 0px 10px 0px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  resize: vertical;
+}
+
+.checkMessage{
+  margin: 0px 0px 10px 0px;
+}
 
 </style>
