@@ -1,5 +1,5 @@
 <template>
-  <section class="container">
+  <section class="bg">
     <div class="inputForm">
       <div class="title">
         슬아야 생일 축하해
@@ -100,7 +100,7 @@ export default {
 <style scoped>
 .title
 {
-  margin: 30px 0;
+  padding: 30px 0;
 }
 .inputForm {
   width: 90%;

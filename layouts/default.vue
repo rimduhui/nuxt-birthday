@@ -21,6 +21,19 @@ export default {
   text-align: center;
 }
 
+.bg { 
+  text-align: center;
+  /* The image used */
+  background-image: url("~/assets/img/bg_main.png");
+  /* Full height */
+  min-height: 300px;
+  
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 .edittext {
   height: 30px;
   padding: 12px;
@@ -54,15 +67,13 @@ export default {
 
 .title
 {
-  color: #000;
-  font-weight: 300;
+  font-weight: 400;
   font-size: 2.5em;
   margin: 0;
 }
 
 .subtitle
 {
-  color: #000;
   font-weight: 300;
   font-size: 2em;
   margin: 0;

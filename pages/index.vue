@@ -1,5 +1,5 @@
 <template>
-  <section class="container">
+  <section class="bg">
     <div class='title'>
       위대하신 <b>슬아여왕</b>님 생일
     </div>
@@ -30,7 +30,7 @@
         <input class="edittext" type="password" v-model="passwordInput" v-if="password != passwordInput" placeholder="비밀번호 입력">
         <ul class="messagesList" v-if="password == passwordInput">
           <li v-for="message in messages" :key="message.id">
-            <div v-if="message.private == true">
+            <div class="messageList" v-if="message.private == true">
               <nuxt-link :to="{ name: 'message', params: { message:message.id }}">
                 {{ message.name }}님의 메시지
               </nuxt-link>
@@ -92,7 +92,7 @@ export default {
 <style scoped>
 .title
 {
-  margin: 20px 0;
+  padding: 40px 0;
 }
 
 .subtitle
@@ -100,12 +100,6 @@ export default {
   margin: 20px;
 }
 
-.background
-{
-  background-repeat: no-repeat;
-  background-position: center;
-  opacity: 0.5;
-}
 .messagesList
 {
   max-width: 600px;
@@ -113,10 +107,12 @@ export default {
   margin: auto;
   padding: 0;
 }
+
 .messageList
 {
   margin: 5px;
 }
+
 @media screen and (min-width: 601px) {
   div.messages {
     font-size: 50px;

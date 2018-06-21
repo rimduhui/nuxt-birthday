@@ -1,9 +1,10 @@
 <template>
-  <section class="container" v-if='message'>
-    <h2 class="info">
-    {{ message.name }} <br>
-    {{ message.content }}
-    </h2>
+  <section class="bg" v-if='message'>
+    <div class="bg2">
+      <br>
+      <div class="name">{{ message.name }}님의 메세지</div>
+      <div class="content" v-bind:class="content">{{ message.content }}</div>
+    </div>  
     <nuxt-link class="button" to="/">
       리스트로
     </nuxt-link>
@@ -61,5 +62,21 @@ export default {
 .button
 {
   margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.bg2 { 
+  text-align: left;
+}
+
+.name {
+  margin: 20px;
+  font-size: 2em;
+}
+
+.content {
+  width: 100px;
+  margin: 20px;
+  font-size: 1.8em;
 }
 </style>
