@@ -72,8 +72,10 @@ export default {
     return {
       title: '슬아 생축',
       meta: [
+        { property: 'fb:app_id', content: '204228190210240'},
         { property: 'og:url', content: 'http://bit.ly/2lpdN4v' },
         { property: 'og:title', content: '슬아 생일선물 대작전' },
+        { property: 'og:image', content: '~/assets/img/seula_duhui.png' },
         { property: 'og:type', content: 'website' },
         { property: 'og:description', content: '그동안 슬아에게 못한 말을 생일선물로 주세요.' }
       ]
