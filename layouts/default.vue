@@ -81,7 +81,7 @@ export default {
 
 @media screen and (min-width: 601px) {
   div.title {
-    font-size: 70px;
+    font-size: 50px;
   }
 }
 

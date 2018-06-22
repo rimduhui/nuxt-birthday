@@ -84,7 +84,7 @@ export default {
   data () {
     return {
       messages: null,
-      password: '0000',
+      password: '2361',
       passwordInput: ''
     }
   }
