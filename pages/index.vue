@@ -72,7 +72,7 @@ export default {
     return {
       title: '슬아 생축',
       meta: [
-        { property: 'fb:app_id', content: '204228190210240'},
+        { property: 'fb:app_id', content: '204228190210240' },
         { property: 'og:url', content: 'http://bit.ly/2lpdN4v' },
         { property: 'og:title', content: '슬아 생일선물 대작전' },
         { property: 'og:image', content: 'https://png.pngtree.com/element_origin_min_pic/16/11/24/3f4a9b121c5769d1103ace681669b914.jpg' },
