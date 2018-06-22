@@ -51,6 +51,7 @@ export default {
       meta: [
         { property: 'og:url', content: 'http://bit.ly/2thTMRB' },
         { property: 'og:title', content: '슬아 생일선물 대작전' },
+        { property: 'og:type', content: 'website' },
         { property: 'og:image', content: '~/assets/img/seula_duhui.png' },
         { property: 'og:description', content: '그동안 슬아에게 못한 말을 생일선물로 주세요.' }
       ]

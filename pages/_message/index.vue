@@ -72,11 +72,12 @@ export default {
 .name {
   margin: 20px;
   font-size: 2em;
+  word-break: break-all;
 }
 
 .content {
-  width: 100px;
   margin: 20px;
   font-size: 1.8em;
+  word-break: break-all;
 }
 </style>
